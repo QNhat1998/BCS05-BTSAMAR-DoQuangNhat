@@ -340,13 +340,13 @@ section.feature {
     z-index: 1;
 }
 
-.feature_item .item_content div{
+.feature_item .item_content div {
     padding-left: 25px;
     z-index: 1;
     transition: all 1s;
 }
 
-.feature_item .item_content::after{
+.feature_item .item_content::after {
     content: "";
     position: absolute;
     background-image: linear-gradient(to right, #f55f8d 0, #f8ae56 51%, #f55f8d 100%);
@@ -359,11 +359,12 @@ section.feature {
     transition: all 1s;
 }
 
-.feature_item .item_content:hover::after{
+.feature_item .item_content:hover::after {
     opacity: 1;
 }
 
-.feature_content .left_content .feature_item .item_content:hover i, .feature_item .item_content:hover div{
+.feature_content .left_content .feature_item .item_content:hover i,
+.feature_item .item_content:hover div {
     color: #fff;
 }
 
@@ -431,13 +432,13 @@ section.portfolio {
     position: absolute;
     top: 0;
     left: -100%;
-    background: linear-gradient(to right,rgba(255,255,255,0) 0,rgba(255,255,255,.3) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .3) 100%);
     display: block;
     transform: skewX(-25deg);
     transition: all 0.5s;
 }
 
-.portfolio_item:hover::before{
+.portfolio_item:hover::before {
     left: 125%;
 }
 
@@ -446,22 +447,22 @@ section.portfolio {
     height: 100%;
 }
 
-.portfolio_content .portfolio_item .overlay_img{
+.portfolio_content .portfolio_item .overlay_img {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,.4);
+    background-color: rgba(0, 0, 0, .4);
     opacity: 0;
     transition: 0.5s;
 }
 
-.portfolio_content .portfolio_item:hover .overlay_img{
+.portfolio_content .portfolio_item:hover .overlay_img {
     opacity: 1;
 }
 
-.portfolio_item .overlay_img a{
+.portfolio_item .overlay_img a {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -471,15 +472,15 @@ section.portfolio {
     width: 50px;
     height: 50px;
     border-radius: 10px;
-    transform: translate(20px,-20px);
+    transform: translate(20px, -20px);
     transition: all 0.5s;
 }
 
-.portfolio_item:hover .overlay_img a{
+.portfolio_item:hover .overlay_img a {
     transform: translate(0);
 }
 
-.portfolio_item .overlay_img .text{
+.portfolio_item .overlay_img .text {
     position: absolute;
     left: 20px;
     bottom: 20px;
@@ -488,18 +489,18 @@ section.portfolio {
     transition: 0.5s;
 }
 
-.portfolio_item .overlay_img .text h3{
+.portfolio_item .overlay_img .text h3 {
     font-size: 22px;
     font-weight: 800;
     color: #fff;
 }
 
-.portfolio_item .overlay_img .text p{
+.portfolio_item .overlay_img .text p {
     color: #fff;
     opacity: 0.7;
 }
 
-.portfolio_item:hover .overlay_img .text{
+.portfolio_item:hover .overlay_img .text {
     transform: translate(0);
 }
 
@@ -529,7 +530,7 @@ section.plan {
     transition: all .5s;
 }
 
-.plan_content .plan_item:hover{
+.plan_content .plan_item:hover {
     border-image: url(../img/br.png) 1 round;
 }
 
@@ -543,10 +544,14 @@ section.plan {
     width: 125px;
 }
 
-.plan_content .plan_item p {
+.plan_content .plan_item p, .plan_content .plan_item li{
     font-size: 18px;
     color: #262626;
     font-weight: 600;
+}
+
+.plan_content .plan_item li{
+    font-weight: 400;
 }
 
 .plan_content .plan_item span {
@@ -585,26 +590,135 @@ section.testimonial {
     background-position: center;
 }
 
-.testimonial .owl-carousel .item {
+.testimonial-content {
+    min-height: 300px;
+}
+
+.testimonial-thumbs .testimonial-pic img {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    padding: 4px;
+    position: relative;
+    z-index: 2;
+    background-color: #f55f8d;
+}
+
+.testimonial-thumbs .testimonial-pic::before{
+    width: 15px;
+    height: 15px;
+    bottom:30px;
+}
+
+.testimonial-thumbs .testimonial-pic::after{
+    width: 10px;
+    height: 10px;
+    bottom:0;
+}
+
+.testimonial-thumbs .testimonial-pic::before,.testimonial-thumbs .testimonial-pic::after{
+    content: "";
+    background-color: #f55f8d;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.testimonial-thumbs .testimonial-pic .shape-bx{
+    position: relative;
+    height: 35px;
+    width: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 18px;
+    opacity: 0;
+    transition: all 1s;
+    background-color: #f55f8d;
+}
+
+.testimonial-thumbs .testimonial-pic .shape-bx::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: url(../img/pattern12.png);
+    background-position: bottom;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    transition: all 1s;
+}
+
+.testimonial-thumbs {
+    width: 300px;
+    margin: auto;
+    height: 170px;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-comment {
+    min-height: 300px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.testimonial-comment .swiper-wrapper {
+    padding-bottom: 20px;
+}
+
+.testimonial-thumbs .testimonial-pic {
+    padding: 30px 0 0;
+    transition: all 0.5s;
+}
+
+.testimonial-thumbs .swiper-slide-thumb-active .testimonial-pic {
+    padding: 0 0 40px;
+}
+
+.testimonial-thumbs .swiper-slide-thumb-active .shape-bx,
+.testimonial-thumbs .swiper-slide-thumb-active .testimonial-pic::before,
+.testimonial-thumbs .swiper-slide-thumb-active .testimonial-pic::after{
+    opacity: 1;
+}
+
+.testimonial-text {
     padding: 30px;
     text-align: center;
-    box-shadow: 0 10px 20px 0 rgb(0 0 0 / 10%);
-    margin: 0 auto;
+    box-shadow: 0 20px 50px 0 rgb(0 0 0 / 10%);
+    margin: 20px 100px;
     border-radius: 10px;
     background-color: #fff;
     max-width: 770px;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
 }
 
-.testimonial .owl-carousel .item i {
+.testimonial-text i {
     position: absolute;
     top: 10px;
     left: 30px;
     font-size: 70px;
     color: #f55f8d;
+    transform: rotate(-180deg);
 }
 
-.testimonial .owl-carousel .item h3 {
+.testimonial-text p {
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    padding: 0 15px 15px;
+}
+
+.testimonial-position {
+    color: #f55f8d;
+    margin-bottom: 20px;
+}
+
+.testimonial-name {
     font-size: 22px;
     font-weight: 800;
     color: #000;
@@ -612,29 +726,17 @@ section.testimonial {
     margin-bottom: 5px;
 }
 
-.testimonial .owl-carousel .item p {
-    color: #f55f8d;
-    margin-bottom: 20px;
-    font-size: 18px;
-    font-weight: 400;
-    font-style: italic;
-    padding: 0 15px 15px;
+.testimonial-content .swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction{
+    bottom: auto;
 }
 
-.testimonial .owl-carousel .item p:last-of-type {
-    font-size: 18px;
-    font-weight: 400;
-    color: #636363;
+.testimonial-content .swiper-pagination-bullet-active{
+    background-color: #f55f8d;
 }
 
-.testimonial_content .owl-theme .owl-dots .owl-dot span {
-    width: 7px;
-    height: 7px;
-}
-
-.testimonial_content>.owl-theme .owl-dots .owl-dot.active span {
-    color: #f55f8d;
-}
 
 /* BLOG */
 section.blog {
@@ -767,14 +869,21 @@ footer .footer_top {
     flex: 1 1 auto;
     border-radius: .5rem 0 0 .5rem;
     border: 1px solid #fff;
+    transition: 0.5s;
+}
+
+.footer_form form input:hover{
+    border-color: #f55f8d;
 }
 
 .footer_form form button {
     border-radius: 0 .5rem .5rem 0;
+    font-size: 20px;
+
 }
 
-.footer_form form button:hover i{
-    animation: leftToRight 0.3s ;
+.footer_form form button:hover i {
+    animation: leftToRight 0.3s;
 }
 
 footer .footer_bottom {
@@ -795,14 +904,14 @@ footer .footer_item a {
     transition: 0.5s;
 }
 
-footer .footer_bottom .footer_item li:hover a{
+footer .footer_bottom .footer_item li:hover a {
     color: #fff;
 }
 
 footer .footer_contact li {
     display: flex;
     align-items: center;
-    color:#fff
+    color: #fff
 }
 
 footer .footer_contact i {
@@ -883,12 +992,12 @@ footer .footer_contact i {
     transition: all 0.5s;
 }
 
-.footer_copyRight .right_content a:hover{
+.footer_copyRight .right_content a:hover {
     background-color: #f55f8d;
 }
 
 /* BACK TO TOP */
-button.backToTop{
+button.backToTop {
     position: fixed;
     right: 20px;
     bottom: 20px;
@@ -906,7 +1015,7 @@ button.backToTop{
     transition: all 0.5s;
 }
 
-.backToTop.show{
+.backToTop.show {
     visibility: visible;
     opacity: 1;
 }
@@ -941,14 +1050,16 @@ button.backToTop{
     }
 }
 
-@keyframes move2{
-    0%{
-        transform: rotate(1deg) translate(2px,2px);
+@keyframes move2 {
+    0% {
+        transform: rotate(1deg) translate(2px, 2px);
     }
-    50%{
-        transform: rotate(-1deg) translate(-2px,-2px);
+
+    50% {
+        transform: rotate(-1deg) translate(-2px, -2px);
     }
-    100%{
-        transform: rotate(1deg) translate(2px,2px);
+
+    100% {
+        transform: rotate(1deg) translate(2px, 2px);
     }
 }
