@@ -390,6 +390,7 @@ section.feature {
 
 .feature_content .right_content img {
     max-width: 100%;
+    animation: move2 5s infinite;
 }
 
 /* PORTFOLIO */
@@ -887,13 +888,10 @@ footer .footer_contact i {
 }
 
 /* BACK TO TOP */
-.backToTop{
+button.backToTop{
     position: fixed;
     right: 20px;
     bottom: 20px;
-}
-
-.backToTop button{
     width: 50px;
     height: 50px;
     background-color: #f55f8d;
@@ -903,6 +901,14 @@ footer .footer_contact i {
     cursor: pointer;
     font-size: 18px;
     font-weight: 800;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.backToTop.show{
+    visibility: visible;
+    opacity: 1;
 }
 
 @keyframes upToDown {
@@ -932,5 +938,17 @@ footer .footer_contact i {
 
     51% {
         opacity: 1;
+    }
+}
+
+@keyframes move2{
+    0%{
+        transform: rotate(1deg) translate(2px,2px);
+    }
+    50%{
+        transform: rotate(-1deg) translate(-2px,-2px);
+    }
+    100%{
+        transform: rotate(1deg) translate(2px,2px);
     }
 }
