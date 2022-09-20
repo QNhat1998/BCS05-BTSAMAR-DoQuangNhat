@@ -318,6 +318,7 @@ section.feature {
 
 .feature .feature_content .left_content {
     width: 50%;
+    overflow: hidden;
 }
 
 .feature_content .left_content .feature_item {
