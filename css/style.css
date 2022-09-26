@@ -890,7 +890,7 @@ footer .footer_top {
 footer .footer_bottom {
     display: flex;
     padding: 70px 0;
-
+    position: relative;
     animation-name: fadeIn;
     animation-duration: 5s;
 }
@@ -905,7 +905,7 @@ footer .footer_item a {
     transition: 0.5s;
 }
 
-footer .footer_bottom .footer_item li:hover a {
+footer .footer_item li:hover a {
     color: #fff;
 }
 
